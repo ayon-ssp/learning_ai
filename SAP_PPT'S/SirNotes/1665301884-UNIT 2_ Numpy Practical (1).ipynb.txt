@@ -1,0 +1,601 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# NumPy - Numerical Python Library"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Import Numpy Library\n",
+    "\n",
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[1, 2, 3, 4],\n",
+       "       [5, 6, 7, 8]])"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#create simple array from the list\n",
+    "\n",
+    "arr = np.array([[1,2,3,4],[5,6,7,8]])\n",
+    "arr"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n"
+     ]
+    }
+   ],
+   "source": [
+    "#diamension of the array\n",
+    "\n",
+    "print(arr.ndim)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(2, 4)\n"
+     ]
+    }
+   ],
+   "source": [
+    "#shape of the array\n",
+    "\n",
+    "print(arr.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'numpy.ndarray'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "#diamension of the array\n",
+    "\n",
+    "print(type(arr))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<memory at 0x0000022C9BA5A5F0>\n"
+     ]
+    }
+   ],
+   "source": [
+    "#diamension of the array\n",
+    "\n",
+    "print(arr.data)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Random Number Generator using numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "22\n"
+     ]
+    }
+   ],
+   "source": [
+    "from numpy import random\n",
+    "x= random.randint(100)\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.6538887333987534\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Generate Random Float\n",
+    "\n",
+    "x= random.rand()\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[14 61 78 76 23]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#3.\tGenerate Random Array\n",
+    "\n",
+    "from numpy import random\n",
+    "x= random.randint(100, size=(5))\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 2 76 87 96  7]\n",
+      " [88 69 33 20  8]\n",
+      " [ 1 60 81  3 15]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Generate a 2-D array with 3 rows, each row containing 5 random integers from 0 to 100\n",
+    "\n",
+    "from numpy import random\n",
+    "x= random.randint(100, size=(3, 5))\n",
+    "print(x)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.4 PRACTICAL:  Creating scalars in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "input array is  [8]\n",
+      "output scalar from input array  8\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "<ipython-input-14-8934cba7361c>:9: DeprecationWarning: np.asscalar(a) is deprecated since NumPy v1.16, use a.item() instead\n",
+      "  out_scalar = np.asscalar(in_arr)\n"
+     ]
+    }
+   ],
+   "source": [
+    "#numpy.asscaler()\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "in_arr = np.array([8])\n",
+    "\n",
+    "print(\"input array is \", in_arr)\n",
+    "\n",
+    "out_scalar = np.asscalar(in_arr)\n",
+    "print(\"output scalar from input array \", out_scalar)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.5 PRACTICAL:  Creating Vector in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Horizontal Vector\n",
+      "[1 2 3]\n",
+      "------------------\n",
+      "Vectical Vector\n",
+      "[[10]\n",
+      " [20]\n",
+      " [30]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#import numpy\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "#creating 1-D list\n",
+    "list1 = [1, 2, 3]\n",
+    "\n",
+    "#creating 1-D list vertical\n",
+    "\n",
+    "list2 = [[10],\n",
+    "        [20],\n",
+    "        [30]]\n",
+    "\n",
+    "#create vector1\n",
+    "\n",
+    "vector1 =  np.array(list1)\n",
+    "vector2 = np.array(list2)\n",
+    "\n",
+    "print(\"Horizontal Vector\")\n",
+    "print(vector1)\n",
+    "\n",
+    "print(\"------------------\")\n",
+    "\n",
+    "print(\"Vectical Vector\")\n",
+    "print(vector2)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.6 PRACTICAL Creating Matrix in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "via string input : \n",
+      " [[1 2]\n",
+      " [3 4]] \n",
+      "\n",
+      "\n",
+      "via array-like input :\n",
+      " [[list([5, 6, 7]) list([4, 6])]]\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\ProgramData\\Anaconda3\\lib\\site-packages\\numpy\\matrixlib\\defmatrix.py:145: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray\n",
+      "  arr = N.array(data, dtype=dtype, copy=copy)\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "a=np.matrix('1 2; 3 4')\n",
+    "print(\"via string input : \\n\", a, \"\\n\\n\")\n",
+    "\n",
+    "#array-like input\n",
+    "b = np.matrix([[5, 6, 7], [4, 6]])\n",
+    "print(\"via array-like input :\\n\", b)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.7 PRACTICAL:  Matrix Multiplication in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[30 35]\n",
+      " [40 45]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "A = 5\n",
+    "\n",
+    "B = [[6, 7],\n",
+    "      [8, 9]]\n",
+    " \n",
+    "print(np.dot(A,B))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[41 67]\n",
+      " [53 87]]\n",
+      "----------\n",
+      "[[30 34]\n",
+      " [86 98]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "A = [[6, 7],\n",
+    "      [8, 9]]\n",
+    "      \n",
+    "B = [[1, 3],\n",
+    "      [5, 7]]\n",
+    "\n",
+    "print(np.dot(A,B))\n",
+    "\n",
+    "print(\"----------\")\n",
+    "\n",
+    "print(np.dot(B,A))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.8 PRACTICAL:  Measure of Central Tendency Using Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 1 23 78]\n",
+      " [98 60 75]\n",
+      " [79 25 48]]\n",
+      "1\n",
+      "98\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "arr = np.array([[1,23,78], [98,60,75],[79,25,48]])\n",
+    "print(arr)\n",
+    "\n",
+    "#min function\n",
+    "print(np.amin(arr))\n",
+    "#max function\n",
+    "print(np.amax(arr))\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[5 6 7]\n",
+      "mean of array a = 6.0\n",
+      "median of array a = 6.0\n",
+      "standard deviation of array a = 0.816496580927726\n",
+      "Variance of array a = 0.6666666666666666\n"
+     ]
+    }
+   ],
+   "source": [
+    "#2.\tFinding Mean, Median, Standard Deviation and Variance in NumPy\n",
+    "a = np.array([5,6,7])\n",
+    "print(a)\n",
+    "print(\"mean of array a =\",np.mean(a))\n",
+    "print(\"median of array a =\",np.median(a))\n",
+    "print(\"standard deviation of array a =\",np.std(a))\n",
+    "print(\"Variance of array a =\",np.var(a))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.9 PRACTICAL:  Percentile & Interquartile in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "34.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "data = [32, 36, 46, 47, 56, 69, 75, 79, 79, 88, 89, 91, 92,93, 96, 97,101,105,112,116]\n",
+    "\n",
+    "#first quartile(Q1)\n",
+    "\n",
+    "Q1 = np.median(data[:10])\n",
+    "\n",
+    "#third Quartile\n",
+    "Q3 = np.median(data[10:])\n",
+    "\n",
+    "#interquartile range\n",
+    "\n",
+    "IQR = Q3-Q1\n",
+    "\n",
+    "print(IQR)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2.10 PRACTICAL:  Array Broadcasting in Numpy"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([2., 4., 6.])"
+      ]
+     },
+     "execution_count": 32,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = np.array([1.0, 2.0, 3.0])\n",
+    "b = np.array([2.0, 2.0, 2.0])\n",
+    "\n",
+    "a * b"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([2., 4., 6.])"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = np.array([1.0, 2.0, 3.0])\n",
+    "b = 2.0\n",
+    "\n",
+    "a * b"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
